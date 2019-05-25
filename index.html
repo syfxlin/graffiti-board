@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.8.2/css/all.min.css">
+    <title>Canvas涂鸦板</title>
+</head>
+<!-- 禁用手机下拉刷新 -->
+<body>
+    <div class="title">
+        <h1><span class="fa fa-palette"></span> Canvas涂鸦板</h1>
+        <h5>Author: <a href="https://ixk.me">Otstar Lin</a></h5>
+    </div>
+    <div class="container">
+        <div class="canvas-container">
+            <canvas id="canvas" width="800" height="500"></canvas>
+            <div id="auxiliary-ele"></div>
+        </div>
+        <div class="canvas-button">
+            <h3>画笔</h3>
+            <ul class="can-pen">
+                <li class="can-btn fa fa-pencil-alt" data-type="pen"><span> 画笔</span></li>
+                <li class="can-btn fa fa-eraser" data-type="eraser"><span> 橡皮擦</span></li>
+                <li class="can-btn fa fa-font" data-type="text"><span> 文本</span></li>
+            </ul>
+            <h3>画笔颜色</h3>
+            <ul class="can-color">
+                <li class="can-btn black" data-type="color"></li>
+                <li class="can-btn red" data-type="color"></li>
+                <li class="can-btn blue" data-type="color"></li>
+                <li class="can-btn green" data-type="color"></li>
+                <li class="can-btn yellow" data-type="color"></li>
+                <li class="can-btn orange" data-type="color"></li>
+                <li class="can-btn gray" data-type="color"></li>
+                <li class="can-btn pink" data-type="color"></li>
+                <li class="can-btn purple" data-type="color"></li>
+            </ul>
+            <h3>画笔大小</h3>
+            <ul class="can-size">
+                <li class="can-btn fa fa-paint-brush small" data-type="size"></li>
+                <li class="can-btn fa fa-paint-brush middle" data-type="size"></li>
+                <li class="can-btn fa fa-paint-brush big" data-type="size"></li>
+            </ul>
+            <h3>形状</h3>
+            <ul class="can-shape">
+                <li class="can-btn fa fa-slash" data-type="line"><span> 直线</span></li>
+                <li class="can-btn fa fa-draw-polygon" data-type="polyline"><span> 多边形</span></li>
+                <li class="can-btn fa fa-square-full" data-type="rect"><span> 矩形</span></li>
+                <li class="can-btn fa fa-square" data-type="round-rect"><span> 圆角矩形</span></li>
+                <li class="can-btn fa fa-circle" data-type="ellipse"><span> 圆形</span></li>
+                <li class="can-btn fa fa-layer-group" data-type="diamond"><span> 菱形</span></li>
+            </ul>
+            <h3>操作</h3>
+            <ul class="can-operate">
+                <li class="can-btn fa fa-reply" data-type="to-prev-canvas"><span> 撤销</span></li>
+                <li class="can-btn fa fa-share" data-type="to-next-canvas"><span> 重做</span></li>
+                <li class="can-btn fa fa-trash" data-type="clean-canvas"><span> 清空画板</span></li>
+            </ul>
+            <h3>生成图像</h3>
+            <ul class="can-output">
+                <li class="can-btn" data-type="get-canvas-url">生成Base编码</li>
+            </ul>
+        </div>
+        <div id="images"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
