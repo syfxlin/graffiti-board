@@ -4,6 +4,10 @@
 
 ![](https://img.shields.io/github/license/syfxlin/graffiti-board.svg?style=flat-square) ![Author](https://img.shields.io/badge/Author-Otstar%20Lin-blue.svg?style=flat-square)
 
+## 演示 Demo
+
+https://lab.ixk.me/graffiti-board/
+
 ## 使用方法 Usage
 
 clone本仓库并直接访问即可
