@@ -84,6 +84,8 @@ function operateCanvasText() {
 }
 
 function canvasDown(e) {
+    let clientX = 0
+    let clientY = 0
     if (!isMobile) {
         clientX = e.clientX
         clientY = e.clientY
@@ -199,6 +201,8 @@ function canvasMove(e) {
 }
 
 function canvasUp(e) {
+    let clientX = 0
+    let clientY = 0
     // 关闭移动事件
     canvasMoveOpen = false
     if (!isMobile) {
