@@ -116,7 +116,11 @@ function initPaint(
     auxEle.style.display = "none";
     auxEle.style.pointerEvents = "none";
     canvasContext.font = config.fontSize + "px " + config.fontFamily;
-    canvasContext.fillText(text, point.s.x + 3, point.s.y + config.fontSize);
+    canvasContext.fillText(
+      text,
+      point.s.x * scale.x + 3,
+      point.s.y * scale.y + config.fontSize
+    );
     let prevData = canvasContext.getImageData(
       0,
       0,
