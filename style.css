@@ -99,6 +99,7 @@ html {
   border: 1.5px solid #87d1df;
   cursor: crosshair;
   padding: 0px;
+  touch-action: none;
 }
 
 #auxiliary-ele {
