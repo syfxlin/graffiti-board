@@ -6,7 +6,7 @@
 
 ## 演示 Demo
 
-https://lab.ixk.me/graffiti-board/
+https://lab.ixk.me/project/graffiti-board/
 
 ## 使用方法 Usage
 
