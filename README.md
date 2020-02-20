@@ -1,6 +1,6 @@
 # Graffiti-board
 
-> 一个简单的基于Canvas的涂鸦板
+> 一个简单的基于SVG的涂鸦板
 
 ![](https://img.shields.io/github/license/syfxlin/graffiti-board.svg?style=flat-square) ![Author](https://img.shields.io/badge/Author-Otstar%20Lin-blue.svg?style=flat-square)
 

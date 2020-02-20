@@ -9,90 +9,125 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.8.2/css/all.min.css"
     />
-    <title>Canvas涂鸦板</title>
+    <title>SVG涂鸦板</title>
   </head>
   <!-- 禁用手机下拉刷新 -->
   <body>
     <div class="title">
-      <h1><span class="fa fa-palette"></span> Canvas涂鸦板</h1>
+      <h1><span class="fa fa-palette"></span> SVG涂鸦板</h1>
       <h5>Author: <a href="https://ixk.me">Otstar Lin</a></h5>
     </div>
     <div class="container">
-      <div class="canvas-container">
-        <canvas id="canvas" width="800" height="500"></canvas>
-        <div id="auxiliary-ele"></div>
+      <div class="svg-container">
+        <svg id="svg"></svg>
       </div>
-      <div class="canvas-button">
+      <div class="svg-button">
         <h3>画笔</h3>
-        <ul class="can-pen">
-          <li class="can-btn fa fa-pencil-alt" data-type="pen">
+        <div class="svg-pen">
+          <div class="svg-btn fa fa-pencil-alt" data-type="pen">
             <span> 画笔</span>
-          </li>
-          <li class="can-btn fa fa-eraser" data-type="eraser">
+          </div>
+          <div class="svg-btn fa fa-eraser" data-type="eraser">
             <span> 橡皮擦</span>
-          </li>
-          <li class="can-btn fa fa-font" data-type="text">
+          </div>
+          <div class="svg-btn fa fa-font" data-type="text">
             <span> 文本</span>
-          </li>
-        </ul>
+          </div>
+          <div class="svg-btn fa fa-pencil-alt" data-type="select">
+            <span> 选择</span>
+          </div>
+        </div>
         <h3>画笔颜色</h3>
-        <ul class="can-color">
-          <li class="can-btn black" data-type="color"></li>
-          <li class="can-btn red" data-type="color"></li>
-          <li class="can-btn blue" data-type="color"></li>
-          <li class="can-btn green" data-type="color"></li>
-          <li class="can-btn yellow" data-type="color"></li>
-          <li class="can-btn orange" data-type="color"></li>
-          <li class="can-btn gray" data-type="color"></li>
-          <li class="can-btn pink" data-type="color"></li>
-          <li class="can-btn purple" data-type="color"></li>
-        </ul>
+        <div class="svg-color">
+          <select id="select-color">
+            <option value="black">黑色</option>
+            <option value="lightcoral">红色</option>
+            <option value="lightblue" selected>蓝色</option>
+            <option value="lightgreen">绿色</option>
+            <option value="lightyellow">黄色</option>
+            <option value="lightsalmon">橙色</option>
+            <option value="lightgray">灰色</option>
+            <option value="lightpink">粉色</option>
+            <option value="plum">紫色</option>
+            <option value="custom">自定义</option>
+          </select>
+          <input type="color" id="custom-color" />
+        </div>
         <h3>画笔大小</h3>
-        <ul class="can-size">
-          <li class="can-btn fa fa-paint-brush small" data-type="size"></li>
-          <li class="can-btn fa fa-paint-brush middle" data-type="size"></li>
-          <li class="can-btn fa fa-paint-brush big" data-type="size"></li>
-        </ul>
+        <div class="svg-size">
+          <select id="select-size">
+            <option value="small">小</option>
+            <option value="middle">中</option>
+            <option value="big">大</option>
+            <option value="custom">自定义</option>
+          </select>
+          <input type="number" id="custom-size" value="2" />
+        </div>
+        <h3>填充颜色</h3>
+        <div class="svg-fill-color">
+          <select id="select-fill-color">
+            <option value="none">不填充</option>
+            <option value="black">黑色</option>
+            <option value="lightcoral">红色</option>
+            <option value="lightblue">蓝色</option>
+            <option value="lightgreen">绿色</option>
+            <option value="lightyellow">黄色</option>
+            <option value="lightsalmon">橙色</option>
+            <option value="lightgray">灰色</option>
+            <option value="lightpink">粉色</option>
+            <option value="plum">紫色</option>
+            <option value="custom">自定义</option>
+          </select>
+          <input type="color" id="custom-fill-color" />
+        </div>
+        <h3>文字大小</h3>
+        <div class="svg-text-size">
+          <input type="number" id="text-size" value="14" />
+        </div>
         <h3>形状</h3>
-        <ul class="can-shape">
-          <li class="can-btn fa fa-slash" data-type="line">
+        <div class="svg-shape">
+          <div class="svg-btn fa fa-slash" data-type="line">
             <span> 直线</span>
-          </li>
-          <li class="can-btn fa fa-draw-polygon" data-type="polyline">
+          </div>
+          <div class="svg-btn fa fa-draw-polygon" data-type="polygon">
             <span> 多边形</span>
-          </li>
-          <li class="can-btn fa fa-square-full" data-type="rect">
+          </div>
+          <div class="svg-btn fa fa-square-full" data-type="rect">
             <span> 矩形</span>
-          </li>
-          <li class="can-btn fa fa-square" data-type="round-rect">
+          </div>
+          <div class="svg-btn fa fa-square" data-type="round-rect">
             <span> 圆角矩形</span>
-          </li>
-          <li class="can-btn fa fa-circle" data-type="ellipse">
+          </div>
+          <div class="svg-btn fa fa-circle" data-type="circle">
             <span> 圆形</span>
-          </li>
-          <li class="can-btn fa fa-layer-group" data-type="diamond">
+          </div>
+          <div class="svg-btn fa fa-circle" data-type="ellipse">
+            <span> 椭圆</span>
+          </div>
+          <div class="svg-btn fa fa-layer-group" data-type="diamond">
             <span> 菱形</span>
-          </li>
-        </ul>
+          </div>
+        </div>
         <h3>操作</h3>
-        <ul class="can-operate">
-          <li class="can-btn fa fa-reply" data-type="to-prev-canvas">
+        <div class="svg-operate">
+          <div class="svg-btn fa fa-reply" id="svg-undo">
             <span> 撤销</span>
-          </li>
-          <li class="can-btn fa fa-share" data-type="to-next-canvas">
+          </div>
+          <div class="svg-btn fa fa-share" id="svg-redo">
             <span> 重做</span>
-          </li>
-          <li class="can-btn fa fa-trash" data-type="clean-canvas">
+          </div>
+          <div class="svg-btn fa fa-trash" id="svg-clean">
             <span> 清空画板</span>
-          </li>
-        </ul>
+          </div>
+        </div>
         <h3>生成图像</h3>
-        <ul class="can-output">
-          <li class="can-btn" data-type="get-canvas-url">生成Base编码</li>
-        </ul>
+        <div class="svg-output">
+          <div class="svg-btn" id="svg-get">取得SVG</div>
+        </div>
       </div>
       <div id="images"></div>
     </div>
+    <script src="path-int.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
